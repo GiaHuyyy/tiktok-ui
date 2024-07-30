@@ -1,6 +1,6 @@
 .wrapper {
     height: var(--default-layout-header-height, 60px);
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px;
+    box-shadow: var(--default-layout-header-box-shadow);
     background: var(--default-layout-header-bg);
 }
 
@@ -12,4 +12,118 @@
     height: 100%;
     padding-right: 24px;
     padding-left: 16px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.search {
+    --search-height: 46px;
+
+    display: flex;
+    align-items: center;
+
+    width: 500px;
+    height: var(--search-height);
+    background: var(--dafault-layout-header-search-bg);
+    border-radius: 92px;
+    border: 1.5px solid transparent;
+
+    &:hover,
+    &:focus-within {
+        border-color: var(--dafault-layout-header-search-border-color);
+    }
+
+    &-input {
+        flex: 1;
+        height: 100%;
+        padding: 0 16px;
+        border-radius: inherit;
+
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 2.1rem;
+        background: transparent;
+        color: var(--dafault-layout-header-search-input-color);
+        caret-color: var(--primary-color);
+
+        &::placeholder {
+            font-size: 1.6rem;
+        }
+    }
+
+    &-separate {
+        display: block;
+        width: 1px;
+        height: calc(var(--search-height) - 18px);
+        background: rgba(22, 24, 35, 0.12);
+    }
+
+    &:hover &-btn {
+        background: var(--dafault-layout-header-search-btn-color);
+        color: var(--dafault-layout-header-search-icon-hover-color);
+    }
+
+    &-btn {
+        width: 52px;
+        height: 100%;
+        border-radius: 0 92px 92px 0;
+        background: transparent;
+
+        font-size: 2rem;
+        color: var(--dafault-layout-header-search-icon-color);
+    }
+}
+
+.search-input:not(:placeholder-shown) ~ .loading {
+    display: flex;
+    animation: spin 1s linear infinite;
+}
+
+.clear,
+.loading {
+    display: none;
+    align-items: center;
+    background: transparent;
+    color: var(--dafault-layout-header-search-icon-color);
+    margin: 0 14px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.action {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    &-btn {
+        min-height: 36px;
+        border-radius: 4px;
+        padding: 6px 8px;
+
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 2.1rem;
+        color: rgb(255, 255, 255);
+        background-color: var(--primary-color);
+
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+
+    &-option {
+        padding: 0px 4px;
+        cursor: pointer;
+        // color: #fff;
+    }
 }

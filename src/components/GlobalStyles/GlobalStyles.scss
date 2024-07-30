@@ -2,17 +2,39 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 :root {
-    --primary: #fe2c55;
+    --primary-color: #fe2c55;
+    --text-color: #161832;
+    --icon-color: #161832;
     --light-mode: #fff;
-    --default-layout-header-bg: var(--light-mode);
 
     // Default layout
+    --default-layout-header-bg: var(--light-mode);
     --default-layout-header-height: 60px;
+    --default-layout-header-box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px;
+    --dafault-layout-header-search-bg: rgba(22, 24, 35, 0.06);
+    --dafault-layout-header-search-border-color: rgba(22, 24, 35, 0.2);
+    --dafault-layout-header-search-input-color: rgb(22, 24, 35);
+    --dafault-layout-header-search-separate-color: rgba(22, 24, 35, 0.12);
+    --dafault-layout-header-search-btn-color: rgba(22, 24, 35, 0.06);
+    --dafault-layout-header-search-icon-color: rgba(22, 24, 35, 0.34);
+    --dafault-layout-header-search-icon-hover-color: rgb(22, 24, 35);
 }
 
-[data-theme='dark'] {
+[data-theme='dark'],
+html.dark {
+    --text-color: #ffe6;
+    --icon-color: #fff;
+    // Default layout
     --dark-mode-bg: #121212;
     --default-layout-header-bg: var(--dark-mode-bg);
+    --default-layout-header-box-shadow: rgba(255, 255, 255, 0.12) 0px 1px 1px;
+    --dafault-layout-header-search-bg: rgba(255, 255, 255, 0.12);
+    --dafault-layout-header-search-border-color: rgba(255, 255, 255, 0.2);
+    --dafault-layout-header-search-input-color: rgb(255, 255, 255, 0.9);
+    --dafault-layout-header-search-separate-color: rgba(255, 255, 255, 0.12);
+    --dafault-layout-header-search-btn-color: rgba(255, 255, 255, 0.12);
+    --dafault-layout-header-search-icon-color: rgba(255, 255, 255, 0.34);
+    --dafault-layout-header-search-icon-hover-color: rgb(255, 255, 255, 0.9);
 }
 
 * {
@@ -29,6 +51,26 @@ body {
     font-family: 'DM Sans', sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
+    color: var(--text-color);
     text-rendering: optimizespeed;
     -webkit-font-smoothing: antialiased;
+}
+
+input,
+button {
+    border: none;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+a[href] {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.icon {
+    color: var(--icon-color);
 }
