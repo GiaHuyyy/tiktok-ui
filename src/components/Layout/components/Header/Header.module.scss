@@ -147,10 +147,12 @@
 .action {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
 
     &-option {
-        padding: 0px 4px;
+        font-size: 1.8rem;
+        padding: 0px 8px;
+        background: transparent;
         cursor: pointer;
     }
 }

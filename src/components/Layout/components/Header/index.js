@@ -6,9 +6,11 @@ import {
     faSpinner,
     faMagnifyingGlass,
     faEllipsisVertical,
-    faPlus,
     faMoon,
     faSun,
+    faLanguage,
+    faHouseFire,
+    faCircleQuestion,
 } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 
@@ -17,6 +19,7 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import AccountItem from '~/components/AccountItem';
+import Menu from '~/components/Popper/Menu';
 
 const cx = classNames.bind(styles);
 
@@ -40,6 +43,31 @@ function Header({ setTheme, currentTheme }) {
 
     // Search more
     const [text, setText] = useState('');
+
+    // Menu
+    const MENU_ITEMS = [
+        {
+            icon: <FontAwesomeIcon icon={faHouseFire} />,
+            title: 'Công cụ dành cho nhà sáng tạo',
+            href: 'https://www.tiktok.com/live/creators/vi-VN/?enter_from=more&lang=vi-VN&region=VN',
+        },
+        {
+            icon: <FontAwesomeIcon icon={faLanguage} />,
+            title: 'Tiếng Việt',
+        },
+        {
+            icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+            title: 'Phản hồi và trợ giúp',
+            to: '/feedback',
+        },
+        {
+            icon: <FontAwesomeIcon icon={currentTheme === 'light' ? faMoon : faSun} />,
+            title: 'Chế độ tối',
+            onClick: () => {
+                handleTheme();
+            },
+        },
+    ];
 
     return (
         <header className={cx('wrapper')}>
@@ -139,21 +167,11 @@ function Header({ setTheme, currentTheme }) {
                 {/* Action */}
                 <div className={cx('action')}>
                     <Button primary>Log in</Button>
-                    <Tippy
-                        render={(attrs) => (
-                            <div className={cx('menu')} tabIndex="-1" {...attrs}>
-                                <PopperWrapper></PopperWrapper>
-                            </div>
-                        )}
-                    >
-                        <div className={cx('action-option', 'icon')}>
+                    <Menu items={MENU_ITEMS}>
+                        <button className={cx('action-option', 'icon')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
-                        </div>
-                    </Tippy>
-                    <button onClick={handleTheme}>
-                        Change theme
-                        <FontAwesomeIcon icon={currentTheme === 'light' ? faMoon : faSun} />
-                    </button>
+                        </button>
+                    </Menu>
                 </div>
             </div>
         </header>

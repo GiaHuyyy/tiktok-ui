@@ -21,13 +21,17 @@
     --dafault-layout-header-search-title-color: rgba(22, 24, 35, 0.5);
     --dafault-layout-header-search-item-hover-bg: rgba(22, 24, 35, 0.08);
     --dafault-layout-header-search-user-name-color: rgba(22, 24, 35, 0.5);
-    --dafault-layout-header-search-popper-bg: var(--light-mode);
+    --dafault-layout-header-popper-bg: var(--light-mode);
 
     // Button
     --button-outline-bg: rgb(255, 255, 255);
     --button-outline-hover-bg: rgba(254, 44, 85, 0.06);
     --button-text-bg: rgb(255, 255, 255);
     --button-text-hover-bg: rgba(22, 24, 35, 0.03);
+
+    // Menu
+    --menu-bg: rgb(255, 255, 255);
+    --menu-item-hover-bg: rgba(22, 24, 35, 0.03);
 }
 
 [data-theme='dark'],
@@ -49,13 +53,17 @@ html.dark {
     --dafault-layout-header-search-title-color: rgba(255, 255, 255, 0.5);
     --dafault-layout-header-search-item-hover-bg: rgba(255, 255, 255, 0.08);
     --dafault-layout-header-search-user-name-color: rgba(255, 255, 255, 0.5);
-    --dafault-layout-header-search-popper-bg: var(--dark-mode-bg);
+    --dafault-layout-header-popper-bg: rgba(17, 17, 17, 0.9);
 
     // Button
     --button-outline-bg: rgba(255, 255, 255, 0.08);
     --button-outline-hover-bg: rgba(255, 255, 255, 0.12);
     --button-text-bg: rgba(255, 255, 255, 0.08);
     --button-text-hover-bg: rgba(255, 255, 255, 0.12);
+
+    // Menu
+    --menu-bg: rgb(18, 18, 18);
+    --menu-item-hover-bg: rgba(255, 255, 255, 0.03);
 }
 
 * {
@@ -79,6 +87,8 @@ body {
 
 input,
 button {
+    font-family: inherit;
+    color: inherit;
     border: none;
     outline: none;
 }

@@ -1,13 +1,12 @@
 .wrapper {
-    // position: absolute;
     width: 100%;
     max-height: min(100vh - 100px, 760px);
-    // min-height: 100px;
-    padding-top: 8px;
+    min-height: 100px;
+    padding: 8px 0;
     border-radius: 8px;
     overflow-y: auto;
     overscroll-behavior: contain;
 
     box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 12px;
-    background: var(--dafault-layout-header-search-popper-bg);
+    background: var(--dafault-layout-header-popper-bg);
 }
