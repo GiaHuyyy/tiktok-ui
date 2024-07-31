@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 :root {
-    --primary-color: #fe2c55;
+    --primary-color: rgb(254, 44, 85);
     --text-color: #161832;
     --icon-color: #161832;
     --light-mode: #fff;
@@ -22,12 +22,19 @@
     --dafault-layout-header-search-item-hover-bg: rgba(22, 24, 35, 0.08);
     --dafault-layout-header-search-user-name-color: rgba(22, 24, 35, 0.5);
     --dafault-layout-header-search-popper-bg: var(--light-mode);
+
+    // Button
+    --button-outline-bg: rgb(255, 255, 255);
+    --button-outline-hover-bg: rgba(254, 44, 85, 0.06);
+    --button-text-bg: rgb(255, 255, 255);
+    --button-text-hover-bg: rgba(22, 24, 35, 0.03);
 }
 
 [data-theme='dark'],
 html.dark {
-    --text-color: #c4c4c4;
-    --icon-color: #fff;
+    --primary-color: rgb(255, 59, 92);
+    --text-color: #ffffe6;
+    --icon-color: #ffffe6;
     // Default layout
     --dark-mode-bg: #121212;
     --default-layout-header-bg: var(--dark-mode-bg);
@@ -43,6 +50,12 @@ html.dark {
     --dafault-layout-header-search-item-hover-bg: rgba(255, 255, 255, 0.08);
     --dafault-layout-header-search-user-name-color: rgba(255, 255, 255, 0.5);
     --dafault-layout-header-search-popper-bg: var(--dark-mode-bg);
+
+    // Button
+    --button-outline-bg: rgba(255, 255, 255, 0.08);
+    --button-outline-hover-bg: rgba(255, 255, 255, 0.12);
+    --button-text-bg: rgba(255, 255, 255, 0.08);
+    --button-text-hover-bg: rgba(255, 255, 255, 0.12);
 }
 
 * {

@@ -149,25 +149,8 @@
     align-items: center;
     gap: 16px;
 
-    &-btn {
-        min-height: 36px;
-        border-radius: 4px;
-        padding: 6px 8px;
-
-        font-size: 1.6rem;
-        font-weight: 700;
-        line-height: 2.1rem;
-        color: rgb(255, 255, 255);
-        background-color: var(--primary-color);
-
-        &:hover {
-            opacity: 0.9;
-        }
-    }
-
     &-option {
         padding: 0px 4px;
         cursor: pointer;
-        // color: #fff;
     }
 }

@@ -1,9 +1,18 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faSpinner, faMagnifyingGlass, faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
+import {
+    faCircleXmark,
+    faSpinner,
+    faMagnifyingGlass,
+    faEllipsisVertical,
+    faPlus,
+    faMoon,
+    faSun,
+} from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 
+import Button from '~/components/Button';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
@@ -113,10 +122,10 @@ function Header({ setTheme, currentTheme }) {
                                 spellCheck="false"
                                 onChange={(e) => setText(e.target.value)}
                             />
-                            <button className={cx('clear')}>
+                            <button className={cx('clear')} onClick={() => setText('')}>
                                 <FontAwesomeIcon icon={faCircleXmark} />
                             </button>
-                            <button className={cx('loading')}>
+                            <button className={cx('loading')} onClick={() => setText('')}>
                                 <FontAwesomeIcon icon={faSpinner} />
                             </button>
                             <span className={cx('search-separate')}></span>
@@ -129,11 +138,22 @@ function Header({ setTheme, currentTheme }) {
 
                 {/* Action */}
                 <div className={cx('action')}>
-                    <button className={cx('action-btn')}>Đăng nhập</button>
-                    <div className={cx('action-option', 'icon')}>
-                        <FontAwesomeIcon icon={faEllipsisVertical} />
-                    </div>
-                    <button onClick={handleTheme}>Change theme</button>
+                    <Button primary>Log in</Button>
+                    <Tippy
+                        render={(attrs) => (
+                            <div className={cx('menu')} tabIndex="-1" {...attrs}>
+                                <PopperWrapper></PopperWrapper>
+                            </div>
+                        )}
+                    >
+                        <div className={cx('action-option', 'icon')}>
+                            <FontAwesomeIcon icon={faEllipsisVertical} />
+                        </div>
+                    </Tippy>
+                    <button onClick={handleTheme}>
+                        Change theme
+                        <FontAwesomeIcon icon={currentTheme === 'light' ? faMoon : faSun} />
+                    </button>
                 </div>
             </div>
         </header>
