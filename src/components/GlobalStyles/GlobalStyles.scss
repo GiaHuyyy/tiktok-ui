@@ -14,15 +14,19 @@
     --dafault-layout-header-search-bg: rgba(22, 24, 35, 0.06);
     --dafault-layout-header-search-border-color: rgba(22, 24, 35, 0.2);
     --dafault-layout-header-search-input-color: rgb(22, 24, 35);
-    --dafault-layout-header-search-separate-color: rgba(22, 24, 35, 0.12);
+    --dafault-layout-header-search-separate-bg: rgba(22, 24, 35, 0.12);
     --dafault-layout-header-search-btn-color: rgba(22, 24, 35, 0.06);
     --dafault-layout-header-search-icon-color: rgba(22, 24, 35, 0.34);
     --dafault-layout-header-search-icon-hover-color: rgb(22, 24, 35);
+    --dafault-layout-header-search-title-color: rgba(22, 24, 35, 0.5);
+    --dafault-layout-header-search-item-hover-bg: rgba(22, 24, 35, 0.08);
+    --dafault-layout-header-search-user-name-color: rgba(22, 24, 35, 0.5);
+    --dafault-layout-header-search-popper-bg: var(--light-mode);
 }
 
 [data-theme='dark'],
 html.dark {
-    --text-color: #ffe6;
+    --text-color: #c4c4c4;
     --icon-color: #fff;
     // Default layout
     --dark-mode-bg: #121212;
@@ -31,10 +35,14 @@ html.dark {
     --dafault-layout-header-search-bg: rgba(255, 255, 255, 0.12);
     --dafault-layout-header-search-border-color: rgba(255, 255, 255, 0.2);
     --dafault-layout-header-search-input-color: rgb(255, 255, 255, 0.9);
-    --dafault-layout-header-search-separate-color: rgba(255, 255, 255, 0.12);
+    --dafault-layout-header-search-separate-bg: rgba(255, 255, 255, 0.12);
     --dafault-layout-header-search-btn-color: rgba(255, 255, 255, 0.12);
     --dafault-layout-header-search-icon-color: rgba(255, 255, 255, 0.34);
     --dafault-layout-header-search-icon-hover-color: rgb(255, 255, 255, 0.9);
+    --dafault-layout-header-search-title-color: rgba(255, 255, 255, 0.5);
+    --dafault-layout-header-search-item-hover-bg: rgba(255, 255, 255, 0.08);
+    --dafault-layout-header-search-user-name-color: rgba(255, 255, 255, 0.5);
+    --dafault-layout-header-search-popper-bg: var(--dark-mode-bg);
 }
 
 * {
@@ -51,7 +59,7 @@ body {
     font-family: 'DM Sans', sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
-    color: var(--text-color);
+    // color: var(--text-color);
     text-rendering: optimizespeed;
     -webkit-font-smoothing: antialiased;
 }
