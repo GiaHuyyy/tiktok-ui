@@ -17,6 +17,11 @@
 .logo {
     display: flex;
     align-items: center;
+
+    img {
+        display: flex;
+        align-items: center;
+    }
 }
 
 .search {

@@ -6,16 +6,20 @@ import styles from './Header.module.scss';
 import images from '~/assets/images';
 const cx = classNames.bind(styles);
 
-function Header() {
+function Header({ setTheme, currentTheme }) {
+    const handleTheme = () => {
+        setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+    };
+
+    const changeLogo = currentTheme === 'light' ? images.logo : images.logoLight;
+
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 {/* Logo */}
-                <div className={cx('logo')}>
-                    <a href="/">
-                        <img src={images.logo} alt="TikTok" />
-                    </a>
-                </div>
+                <a href="/" className={cx('logo')}>
+                    <img src={changeLogo} alt="TikTok" />
+                </a>
 
                 {/* Search */}
                 <form className={cx('search')}>
@@ -38,6 +42,7 @@ function Header() {
                     <div className={cx('action-option', 'icon')}>
                         <FontAwesomeIcon icon={faEllipsisVertical} />
                     </div>
+                    <button onClick={handleTheme}>Change theme</button>
                 </div>
             </div>
         </header>
