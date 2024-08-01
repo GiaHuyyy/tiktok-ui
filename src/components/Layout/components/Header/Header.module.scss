@@ -144,7 +144,8 @@
     }
 }
 
-.action {
+.action,
+.user {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -153,6 +154,53 @@
         font-size: 1.8rem;
         padding: 0px 8px;
         background: transparent;
+        cursor: pointer;
+    }
+}
+
+.user {
+    gap: 28px;
+
+    &-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.1rem;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    &-inbox {
+        position: relative;
+
+        &::after {
+            content: '53';
+            position: absolute;
+            top: -12px;
+            left: 8px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            min-width: 20px;
+            height: 20px;
+            padding: 0px 6px;
+            border-radius: 10px;
+            background: var(--primary-color);
+
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: 600;
+            line-height: 1.8rem;
+        }
+    }
+
+    &-avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        object-fit: cover;
         cursor: pointer;
     }
 }

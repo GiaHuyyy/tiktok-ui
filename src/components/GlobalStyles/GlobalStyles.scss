@@ -32,6 +32,7 @@
     // Menu
     --menu-bg: rgb(255, 255, 255);
     --menu-item-hover-bg: rgba(22, 24, 35, 0.03);
+    --menu-item-separate-color: rgba(22, 24, 35, 0.12);
 }
 
 [data-theme='dark'],
@@ -64,6 +65,7 @@ html.dark {
     // Menu
     --menu-bg: rgb(18, 18, 18);
     --menu-item-hover-bg: rgba(255, 255, 255, 0.03);
+    --menu-item-separate-color: rgba(255, 255, 255, 0.12);
 }
 
 * {
@@ -104,4 +106,27 @@ a[href] {
 
 .icon {
     color: var(--icon-color);
+}
+
+// Custom tippy tooltip
+body {
+    .tippy-box {
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        background-color: rgba(84, 84, 84, 0.92);
+    }
+
+    .tippy-arrow {
+        color: rgba(84, 84, 84, 0.92);
+    }
+
+    .tippy-content {
+        padding: 8px 9px;
+    }
+
+    .tippy-box[data-placement^='bottom'] > .tippy-arrow:before {
+        top: -8px;
+    }
 }
