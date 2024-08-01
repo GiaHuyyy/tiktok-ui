@@ -3,7 +3,7 @@ import styles from './Menu.module.scss';
 import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
-function MenuItem({ data }) {
+function MenuItem({ data, onClick }) {
     // Điều kiện render dựa trên thuộc tính của item (data)
     if (data.to) {
         return (
@@ -28,7 +28,7 @@ function MenuItem({ data }) {
         );
     } else {
         return (
-            <div className={cx('menu-item')}>
+            <div className={cx('menu-item')} onClick={onClick}>
                 <span className={cx('icon')}>{data.icon}</span>
                 {data.title}
             </div>

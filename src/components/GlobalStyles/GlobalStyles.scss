@@ -37,10 +37,10 @@
 [data-theme='dark'],
 html.dark {
     --primary-color: rgb(255, 59, 92);
-    --text-color: #ffffe6;
-    --icon-color: #ffffe6;
-    // Default layout
+    --text-color: #fff;
+    --icon-color: #fff;
     --dark-mode-bg: #121212;
+    // Default layout
     --default-layout-header-bg: var(--dark-mode-bg);
     --default-layout-header-box-shadow: rgba(255, 255, 255, 0.12) 0px 1px 1px;
     --dafault-layout-header-search-bg: rgba(255, 255, 255, 0.12);

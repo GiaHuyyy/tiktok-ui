@@ -11,6 +11,7 @@ import {
     faLanguage,
     faHouseFire,
     faCircleQuestion,
+    faLightbulb,
 } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 
@@ -48,26 +49,83 @@ function Header({ setTheme, currentTheme }) {
     const MENU_ITEMS = [
         {
             icon: <FontAwesomeIcon icon={faHouseFire} />,
-            title: 'Công cụ dành cho nhà sáng tạo',
-            href: 'https://www.tiktok.com/live/creators/vi-VN/?enter_from=more&lang=vi-VN&region=VN',
+            title: 'Creater tools',
+            children: {
+                title: 'Creater tools',
+                data: [
+                    {
+                        icon: <FontAwesomeIcon icon={faLightbulb} />,
+                        title: 'LIVE Creator Hub',
+                        href: 'https://www.tiktok.com/live/creators/vi-VN/?enter_from=more&lang=vi-VN&region=VN',
+                    },
+                ],
+            },
         },
         {
             icon: <FontAwesomeIcon icon={faLanguage} />,
-            title: 'Tiếng Việt',
+            title: 'English',
+            children: {
+                title: 'Language',
+                data: [
+                    {
+                        type: 'language',
+                        code: 'en',
+                        title: 'English',
+                    },
+                    {
+                        type: 'language',
+                        code: 'vi',
+                        title: 'Tiếng Việt',
+                    },
+                    {
+                        type: 'language',
+                        code: 'jp',
+                        title: '日本語',
+                    },
+                    {
+                        type: 'language',
+                        code: 'ko',
+                        title: '한국어',
+                    },
+                    {
+                        type: 'language',
+                        code: 'zh',
+                        title: '简体中文',
+                    },
+                    {
+                        type: 'language',
+                        code: 'ru',
+                        title: 'Русский',
+                    },
+                ],
+            },
         },
         {
             icon: <FontAwesomeIcon icon={faCircleQuestion} />,
-            title: 'Phản hồi và trợ giúp',
+            title: 'Feed back and help',
             to: '/feedback',
         },
         {
             icon: <FontAwesomeIcon icon={currentTheme === 'light' ? faMoon : faSun} />,
-            title: 'Chế độ tối',
+            title: 'Dark mode',
             onClick: () => {
                 handleTheme();
             },
         },
     ];
+
+    // Menu change
+    const [language, setLanguage] = useState('en');
+    const handleMenuChange = (menuItem) => {
+        switch (menuItem.type) {
+            case 'language':
+                // Handle change language
+                setLanguage(menuItem.code);
+                break;
+            default:
+                break;
+        }
+    };
 
     return (
         <header className={cx('wrapper')}>
@@ -167,7 +225,7 @@ function Header({ setTheme, currentTheme }) {
                 {/* Action */}
                 <div className={cx('action')}>
                     <Button primary>Log in</Button>
-                    <Menu items={MENU_ITEMS}>
+                    <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
                         <button className={cx('action-option', 'icon')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
                         </button>
