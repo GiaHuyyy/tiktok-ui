@@ -1,5 +1,4 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 :root {
     --primary-color: rgb(254, 44, 85);
@@ -78,11 +77,41 @@ html {
     font-size: 62.5%;
 }
 
+// Fonts embedd
+@font-face {
+    font-family: TikTokFont;
+    src: url('/assets/fonts/TikTokFont-Bold.woff2');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: TikTokFont;
+    src: url('/assets/fonts/TikTokFont-Regular.woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: TikTokFont;
+    src: url('/assets/fonts/TikTokFont-Semibold.woff2');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: TikTokDisplayFont;
+    src: url('/assets/fonts/TikTokDisplayFont-Bold.woff2');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: TikTokDisplayFont;
+    src: url('/assets/fonts/TikTokDisplayFont-Semibold.woff2');
+    font-weight: 600;
+}
+
 body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'TikTokFont', sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
-    // color: var(--text-color);
     text-rendering: optimizespeed;
     -webkit-font-smoothing: antialiased;
 }
@@ -102,10 +131,6 @@ button {
 a[href] {
     color: var(--text-color);
     text-decoration: none;
-}
-
-.icon {
-    color: var(--icon-color);
 }
 
 // Custom tippy tooltip

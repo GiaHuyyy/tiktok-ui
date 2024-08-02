@@ -36,7 +36,6 @@ function Menu({ items, children, onChange = defaultFn }) {
     };
 
     return (
-        <div>
             <Tippy
                 interactive
                 delay={[0, 800]}
@@ -59,7 +58,6 @@ function Menu({ items, children, onChange = defaultFn }) {
             >
                 {children}
             </Tippy>
-        </div>
     );
 }
 

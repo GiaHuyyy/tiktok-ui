@@ -72,14 +72,22 @@
         color: var(--dafault-layout-header-search-icon-hover-color);
     }
 
+    &:hover &-btn-icon {
+        color: var(--dafault-layout-header-search-icon-hover-color);
+    }
+
     &-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 52px;
         height: 100%;
         border-radius: 0 92px 92px 0;
         background: transparent;
 
-        font-size: 2rem;
-        color: var(--dafault-layout-header-search-icon-color);
+        &-icon {
+            color: var(--dafault-layout-header-search-icon-color);
+        }
     }
 
     &-result {
@@ -159,13 +167,12 @@
 }
 
 .user {
-    gap: 28px;
+    gap: 20px;
 
     &-icon {
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 2.1rem;
         background: transparent;
         cursor: pointer;
     }
@@ -176,8 +183,8 @@
         &::after {
             content: '53';
             position: absolute;
-            top: -12px;
-            left: 8px;
+            top: -8px;
+            left: 16px;
 
             display: flex;
             align-items: center;

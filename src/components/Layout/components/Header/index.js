@@ -1,26 +1,7 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faCircleXmark,
-    faSpinner,
-    faMagnifyingGlass,
-    faEllipsisVertical,
-    faMoon,
-    faSun,
-    faLanguage,
-    faHouseFire,
-    faCircleQuestion,
-    faLightbulb,
-    faPlus,
-    faPaperPlane,
-    faInbox,
-    faUser,
-    faGear,
-    faVideo,
-    faSignOut,
-} from '@fortawesome/free-solid-svg-icons';
-import { faTiktok } from '@fortawesome/free-brands-svg-icons';
+import { faCircleXmark, faSpinner, faEllipsisVertical, faLightbulb, faVideo } from '@fortawesome/free-solid-svg-icons';
 
 import Tippy from '@tippyjs/react/';
 import HeadlessTippy from '@tippyjs/react/headless';
@@ -32,6 +13,22 @@ import styles from './Header.module.scss';
 import images from '~/assets/images';
 import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Popper/Menu';
+import {
+    CoinIcon,
+    CreatorIcon,
+    DarkModeIcon,
+    InboxIcon,
+    LanguageIcon,
+    LightModeIcon,
+    LogoutIcon,
+    MessageIcon,
+    PlusIcon,
+    ProfileIcon,
+    QuestionIcon,
+    SearchGlassIcon,
+    SettingsIcon,
+} from '~/components/Icons';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -62,7 +59,7 @@ function Header({ setTheme, currentTheme }) {
     // Menu
     const MENU_ITEMS = [
         {
-            icon: <FontAwesomeIcon icon={faHouseFire} />,
+            icon: <CreatorIcon />,
             title: 'Creater tools',
             children: {
                 title: 'Creater tools',
@@ -76,7 +73,7 @@ function Header({ setTheme, currentTheme }) {
             },
         },
         {
-            icon: <FontAwesomeIcon icon={faLanguage} />,
+            icon: <LanguageIcon />,
             title: 'English',
             children: {
                 title: 'Language',
@@ -115,12 +112,12 @@ function Header({ setTheme, currentTheme }) {
             },
         },
         {
-            icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+            icon: <QuestionIcon />,
             title: 'Feed back and help',
             to: '/feedback',
         },
         {
-            icon: <FontAwesomeIcon icon={currentTheme === 'light' ? faMoon : faSun} />,
+            icon: currentTheme === 'light' ? <DarkModeIcon /> : <LightModeIcon />,
             title: 'Dark mode',
             onClick: () => {
                 handleTheme();
@@ -131,17 +128,17 @@ function Header({ setTheme, currentTheme }) {
     // Menu user
     const MENU_ITEMS_USER = [
         {
-            icon: <FontAwesomeIcon icon={faUser} />,
+            icon: <ProfileIcon />,
             title: 'View profile',
             to: '/@zahuy',
         },
         {
-            icon: <FontAwesomeIcon icon={faTiktok} />,
+            icon: <CoinIcon />,
             title: 'Get Coins',
             to: '/coins',
         },
         {
-            icon: <FontAwesomeIcon icon={faHouseFire} />,
+            icon: <CreatorIcon />,
             title: 'Creater tools',
             children: {
                 title: 'Creater tools',
@@ -160,12 +157,12 @@ function Header({ setTheme, currentTheme }) {
             },
         },
         {
-            icon: <FontAwesomeIcon icon={faGear} />,
+            icon: <SettingsIcon />,
             title: 'Settings',
             to: '/settings',
         },
         {
-            icon: <FontAwesomeIcon icon={faLanguage} />,
+            icon: <LanguageIcon />,
             title: 'English',
             children: {
                 title: 'Language',
@@ -204,19 +201,19 @@ function Header({ setTheme, currentTheme }) {
             },
         },
         {
-            icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+            icon: <QuestionIcon />,
             title: 'Feed back and help',
             to: '/feedback',
         },
         {
-            icon: <FontAwesomeIcon icon={currentTheme === 'light' ? faMoon : faSun} />,
+            icon: currentTheme === 'light' ? <DarkModeIcon /> : <LightModeIcon />,
             title: 'Dark mode',
             onClick: () => {
                 handleTheme();
             },
         },
         {
-            icon: <FontAwesomeIcon icon={faSignOut} />,
+            icon: <LogoutIcon />,
             title: 'Log out',
             to: '/logout',
             separate: true,
@@ -326,7 +323,7 @@ function Header({ setTheme, currentTheme }) {
                             </button>
                             <span className={cx('search-separate')}></span>
                             <button className={cx('search-btn')}>
-                                <FontAwesomeIcon icon={faMagnifyingGlass} />
+                                <SearchGlassIcon className={cx('search-btn-icon')} />
                             </button>
                         </form>
                     </HeadlessTippy>
@@ -336,22 +333,22 @@ function Header({ setTheme, currentTheme }) {
                 {currentUser ? (
                     <div className={cx('user')}>
                         <Button text>
-                            <FontAwesomeIcon icon={faPlus} />
+                            <PlusIcon />
                             Upload
                         </Button>
                         <Tippy delay={[0, 200]} content="Message" placement="bottom">
                             <button className={cx('user-icon')}>
-                                <FontAwesomeIcon icon={faPaperPlane} />
+                                <MessageIcon />
                             </button>
                         </Tippy>
                         <Tippy delay={[0, 200]} content="Inbox" placement="bottom">
                             <button className={cx('user-icon', 'user-inbox')}>
-                                <FontAwesomeIcon icon={faInbox} />
+                                <InboxIcon />
                             </button>
                         </Tippy>
 
                         <Menu items={MENU_ITEMS_USER} onChange={handleMenuChange}>
-                            <img src={images.avatar} alt="Gia Huy" className={cx('user-avatar')} />
+                            <Image src={images.avatar} alt="Gia Huy" className={cx('user-avatar')} />
                         </Menu>
                     </div>
                 ) : (
