@@ -3,6 +3,7 @@ import { HeaderOnly } from '~/components/Layout';
 
 // Pages
 import Home from '~/pages/Home';
+import Profile from '~/pages/Profile';
 import Discover from '~/pages/Discover';
 import Following from '~/pages/Following';
 import Upload from '~/pages/Upload';
@@ -10,6 +11,7 @@ import Upload from '~/pages/Upload';
 // Không cần đăng nhập
 const publicRoutes = [
     { path: '/', component: Home },
+    { path: '/@/:nickname', component: Profile },
     { path: '/discover', component: Discover },
     { path: '/following', component: Following },
     // { path: '/upload', component: Upload, layout: null }, // Layout riêng biệt không có Default Layout

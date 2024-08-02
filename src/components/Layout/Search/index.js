@@ -10,27 +10,39 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { SearchGlassIcon } from '~/components/Icons';
-import images from '~/assets/images';
 
 import AccountItem from '~/components/AccountItem';
 
 const cx = classNames.bind(styles);
 function Search() {
     // Handle search
-    const [searchText, setSearchText] = useState('');
+    const [searchValue, setSearchValue] = useState('');
     const [searchResult, setSearchResult] = useState([]);
     const [showResult, setShowResult] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     const inputRef = useRef();
 
     useEffect(() => {
-        setTimeout(() => {
-            setSearchResult([1, 2, 3]);
-        }, 0);
-    }, []);
+        if (searchValue) {
+            setLoading(true);
+
+            fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(searchValue)}&type=less`)
+                .then((res) => res.json())
+                .then((res) => {
+                    setSearchResult(res.data);
+                    setLoading(false);
+                })
+                .catch(() => {
+                    setLoading(false);
+                });
+        } else {
+            setSearchResult([]);
+        }
+    }, [searchValue]);
 
     const handleClearSearch = () => {
-        setSearchText('');
+        setSearchValue('');
         setSearchResult([]);
         inputRef.current.focus();
     };
@@ -48,7 +60,7 @@ function Search() {
                     <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                         <PopperWrapper>
                             <h4 className={cx('search-title')}>Bạn có thể thích</h4>
-                            <ul className={cx('search-list')}>
+                            {/* <ul className={cx('search-list')}>
                                 <li className={cx('search-item')}>
                                     <img src={images.arrowTop} alt="" />
                                     Gia Huy
@@ -89,13 +101,12 @@ function Search() {
                                     <span className={cx('dot')}></span>
                                     Mashup Mời Trầu Và Ái Nộ
                                 </li>
-                            </ul>
+                            </ul> */}
                             <h4 className={cx('search-title')}>Account</h4>
-                            <AccountItem />
-                            <AccountItem />
-                            <AccountItem />
-                            <AccountItem />
-                            <span className={cx('search-more')}>Thêm tất cả kết quả tìm kiếm cho "{searchText}"</span>
+                            {searchResult.map((result) => (
+                                <AccountItem key={result.id} data={result} />
+                            ))}
+                            <span className={cx('search-more')}>Thêm tất cả kết quả tìm kiếm cho "{searchValue}"</span>
                         </PopperWrapper>
                     </div>
                 )}
@@ -108,19 +119,24 @@ function Search() {
                         placeholder="Search"
                         className={cx('search-input')}
                         spellCheck="false"
-                        value={searchText}
+                        value={searchValue}
                         onChange={(e) => {
-                            setSearchText(e.target.value);
+                            setSearchValue(e.target.value.trimStart());
                         }}
                         onFocus={() => setShowResult(true)}
                     />
 
-                    <button type="button" className={cx('clear')} onClick={handleClearSearch}>
-                        <FontAwesomeIcon icon={faCircleXmark} />
-                    </button>
-                    <button className={cx('loading')}>
-                        <FontAwesomeIcon icon={faSpinner} />
-                    </button>
+                    {!!searchValue && !loading && (
+                        <button type="button" className={cx('clear')} onClick={handleClearSearch}>
+                            <FontAwesomeIcon icon={faCircleXmark} />
+                        </button>
+                    )}
+
+                    {loading && (
+                        <button className={cx('loading')}>
+                            <FontAwesomeIcon icon={faSpinner} />
+                        </button>
+                    )}
                     <span className={cx('search-separate')}></span>
                     <button className={cx('search-btn')}>
                         <SearchGlassIcon className={cx('search-btn-icon')} />

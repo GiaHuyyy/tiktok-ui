@@ -99,18 +99,22 @@
     color: var(--dafault-layout-header-search-icon-hover-color);
 }
 
-.search-input:not(:placeholder-shown) ~ .clear {
-    display: flex;
-}
-
 .clear,
 .loading {
-    display: none;
+    position: absolute;
+    top: 50%;
+    right: 52px;
+    transform: translateY(-50%);
+    display: flex;
     align-items: center;
     background: transparent;
     color: var(--dafault-layout-header-search-icon-color);
     margin: 0 14px;
     cursor: default;
+}
+
+.loading {
+    animation: spinner 1s linear infinite;
 }
 
 .dot {
@@ -121,11 +125,11 @@
     background: var(--dafault-layout-header-search-icon-color);
 }
 
-@keyframes spin {
+@keyframes spinner {
     from {
-        transform: rotate(0deg);
+        transform: translateY(-50%) rotate(0deg);
     }
     to {
-        transform: rotate(360deg);
+        transform: translateY(-50%) rotate(360deg);
     }
 }
