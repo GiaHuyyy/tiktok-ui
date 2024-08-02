@@ -1,3 +1,139 @@
+# Library
+
+## Custom webpack: [customize-cra](https://github.com/arackaf/customize-cra).
+
+```bash
+npm i customize-cra react-app-rewired --dev
+```
+
+### Tạo file `config-overrides.js` tại root, chuyển sang [react-app-rewired](https://github.com/timarney/react-app-rewired/).
+
+```bash
+const { override, useBabelRc } = require("customize-cra");
+
+module.exports = override(
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    useBabelRc()
+);
+```
+
+```bash
+  /* package.json */
+
+  "scripts":
+  {
+-   "start": "react-scripts start",
++   "start": "react-app-rewired start",
+-   "build": "react-scripts build",
++   "build": "react-app-rewired build",
+-   "test": "react-scripts test",
++   "test": "react-app-rewired test",
+    "eject": "react-scripts eject"
+}
+```
+
+## Cài đặt [babel-plugin-module-resolver](https://github.com/tleunen/babel-plugin-module-resolver)
+
+```bash
+npm i --save-dev babel-plugin-module-resolver
+```
+
+### Tạo file `.babelrc` tại root
+
+```bash
+{
+    "plugins": [
+        [
+            "module-resolver",
+            {
+                "alias": {
+                    "~": "./src"
+                }
+            }
+        ]
+    ]
+}
+```
+
+### Gợi ý đường dẫn: Tạo file `jsconfig.json` tại root
+
+```bash
+{
+    "compilerOptions":
+    {
+        "baseUrl": ".",
+        "paths":
+        {
+            "~/*": ["src/*"]
+        }
+    }
+}
+```
+
+## Cài đặt cấu hình Pretier
+
+-   install extension `Pretier`
+
+### Tạo file `.prettierrc`
+
+```bash
+{
+    "arrowParens": "always",
+    "bracketSameLine": false,
+    "bracketSpacing": true,
+    "embeddedLanguageFormatting": "auto",
+    "htmlWhitespaceSensitivity": "css",
+    "insertPragma": false,
+    "jsxSingleQuote": false,
+    "printWidth": 120,
+    "proseWrap": "preserve",
+    "quoteProps": "as-needed",
+    "requirePragma": false,
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 4,
+    "trailingComma": "all",
+    "useTabs": false,
+    "vueIndentScriptAndStyle": false
+}
+```
+
+### Tạo file `.vscode/settings,js`
+
+```bash
+{
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
+```
+
+## Cấu hình sử dụng CSS/SASS
+
+```bash
+npm i -D sass
+```
+
+## Reset css
+
+```bash
+npm i --save normalize.css
+```
+
+### `@import 'normalize.css';` vào file `GlobalStyles.scss`
+
+## Cài đặt react-router-dom
+
+```bash
+npm i react-router-dom
+```
+
+## Cài đặt `fontawesome`
+
+```bash
+npm i @fortawesome/fontawesome-svg-core@latest @fortawesome/free-brands-svg-icons@latest @fortawesome/free-regular-svg-icons@latest @fortawesome/free-solid-svg-icons@latest @fortawesome/react-fontawesome@latest
+
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
