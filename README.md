@@ -1,12 +1,12 @@
 # Library
 
-## Custom webpack: [customize-cra](https://github.com/arackaf/customize-cra).
+## Custom webpack: [customize-cra](https://github.com/arackaf/customize-cra)
 
 ```bash
 npm i customize-cra react-app-rewired --dev
 ```
 
-### Tạo file `config-overrides.js` tại root, chuyển sang [react-app-rewired](https://github.com/timarney/react-app-rewired/).
+### Tạo file `config-overrides.js` tại root, chuyển sang [react-app-rewired](https://github.com/timarney/react-app-rewired/)
 
 ```bash
 const { override, useBabelRc } = require("customize-cra");
@@ -70,7 +70,7 @@ npm i --save-dev babel-plugin-module-resolver
 }
 ```
 
-## Cài đặt cấu hình Pretier
+## Cài đặt cấu hình `Pretier`
 
 -   install extension `Pretier`
 
@@ -107,7 +107,7 @@ npm i --save-dev babel-plugin-module-resolver
 }
 ```
 
-## Cấu hình sử dụng CSS/SASS
+## Cấu hình sử dụng `CSS/SASS`
 
 ```bash
 npm i -D sass
@@ -121,7 +121,7 @@ npm i --save normalize.css
 
 ### `@import 'normalize.css';` vào file `GlobalStyles.scss`
 
-## Cài đặt react-router-dom
+## Cài đặt `react-router-dom`
 
 ```bash
 npm i react-router-dom
@@ -132,6 +132,12 @@ npm i react-router-dom
 ```bash
 npm i @fortawesome/fontawesome-svg-core@latest @fortawesome/free-brands-svg-icons@latest @fortawesome/free-regular-svg-icons@latest @fortawesome/free-solid-svg-icons@latest @fortawesome/react-fontawesome@latest
 
+```
+
+## Sử dụng thư viện [Axios](https://github.com/axios/axios)
+
+```bash
+npm i axios
 ```
 
 # Getting Started with Create React App

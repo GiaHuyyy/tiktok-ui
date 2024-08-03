@@ -8,6 +8,7 @@ import 'tippy.js/dist/tippy.css';
 
 import { Link } from 'react-router-dom';
 
+import routesConfig from '~/config/routes';
 import Button from '~/components/Button';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
@@ -224,9 +225,9 @@ function Header({ setTheme, currentTheme }) {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 {/* Logo */}
-                <a href="/" className={cx('logo')}>
+                <Link to={routesConfig.home} className={cx('logo')}>
                     <img src={changeLogo} alt="TikTok" />
-                </a>
+                </Link>
 
                 {/* Search */}
                 <Search />
@@ -234,10 +235,12 @@ function Header({ setTheme, currentTheme }) {
                 {/* Action */}
                 {currentUser ? (
                     <div className={cx('user')}>
-                        <Button text>
-                            <PlusIcon />
-                            Upload
-                        </Button>
+                        <Link to={routesConfig.upload}>
+                            <Button text>
+                                <PlusIcon />
+                                Upload
+                            </Button>
+                        </Link>
                         <Tippy delay={[0, 200]} content="Message" placement="bottom">
                             <button className={cx('user-icon')}>
                                 <MessageIcon />
