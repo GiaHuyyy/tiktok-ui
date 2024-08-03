@@ -96,6 +96,61 @@ function Header({ setTheme, currentTheme }) {
                         code: 'ru',
                         title: 'Русский',
                     },
+                    {
+                        type: 'language',
+                        code: 'fr',
+                        title: 'Français',
+                    },
+                    {
+                        type: 'language',
+                        code: 'es',
+                        title: 'Español',
+                    },
+                    {
+                        type: 'language',
+                        code: 'de',
+                        title: 'Deutsch',
+                    },
+                    {
+                        type: 'language',
+                        code: 'it',
+                        title: 'Italiano',
+                    },
+                    {
+                        type: 'language',
+                        code: 'pl',
+                        title: 'Polski',
+                    },
+                    {
+                        type: 'language',
+                        code: 'tr',
+                        title: 'Türkçe',
+                    },
+                    {
+                        type: 'language',
+                        code: 'ar',
+                        title: 'العربية',
+                    },
+                    {
+                        type: 'language',
+                        code: 'id',
+                        title: 'Bahasa Indonesia',
+                    },
+                    {
+                        type: 'language',
+                        code: 'th',
+                        title: 'ไทย',
+                    },
+                    {
+                        type: 'language',
+                        code: 'ms',
+                        title: 'Bahasa Melayu',
+                    },
+                    {
+                        type: 'language',
+                        code: 'pt',
+                        title: 'Português',
+                    },
                 ],
             },
         },
@@ -184,6 +239,61 @@ function Header({ setTheme, currentTheme }) {
                         type: 'language',
                         code: 'ru',
                         title: 'Русский',
+                    },
+                    {
+                        type: 'language',
+                        code: 'fr',
+                        title: 'Français',
+                    },
+                    {
+                        type: 'language',
+                        code: 'es',
+                        title: 'Español',
+                    },
+                    {
+                        type: 'language',
+                        code: 'de',
+                        title: 'Deutsch',
+                    },
+                    {
+                        type: 'language',
+                        code: 'it',
+                        title: 'Italiano',
+                    },
+                    {
+                        type: 'language',
+                        code: 'pl',
+                        title: 'Polski',
+                    },
+                    {
+                        type: 'language',
+                        code: 'tr',
+                        title: 'Türkçe',
+                    },
+                    {
+                        type: 'language',
+                        code: 'ar',
+                        title: 'العربية',
+                    },
+                    {
+                        type: 'language',
+                        code: 'id',
+                        title: 'Bahasa Indonesia',
+                    },
+                    {
+                        type: 'language',
+                        code: 'th',
+                        title: 'ไทย',
+                    },
+                    {
+                        type: 'language',
+                        code: 'ms',
+                        title: 'Bahasa Melayu',
+                    },
+                    {
+                        type: 'language',
+                        code: 'pt',
+                        title: 'Português',
                     },
                 ],
             },
