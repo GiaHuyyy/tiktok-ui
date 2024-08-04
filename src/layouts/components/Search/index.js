@@ -13,6 +13,7 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { SearchGlassIcon } from '~/components/Icons';
+import images from '~/assets/images';
 
 import AccountItem from '~/components/AccountItem';
 
@@ -59,59 +60,62 @@ function Search() {
     return (
         <div>
             <HeadlessTippy
-                visible={showResult && searchResult.length > 0}
+                // visible={showResult && searchResult.length > 0}
+                trigger='click'
                 interactive
                 render={(attrs) => (
                     <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                         <PopperWrapper>
-                            <h4 className={cx('search-title')}>Bạn có thể thích</h4>
-                            {/* <ul className={cx('search-list')}>
-                                <li className={cx('search-item')}>
-                                    <img src={images.arrowTop} alt="" />
-                                    Gia Huy
-                                </li>
-                                <li className={cx('search-item')}>
-                                    <img src={images.arrowTrend} alt="" />
-                                    Trend Vừa Hận Vừa Yêu Remix
-                                </li>
-                                <li className={cx('search-item')}>
-                                    <img src={images.arrowTrend} alt="" />
-                                    Vụ Phốt Obito
-                                </li>
-                                <li className={cx('search-item')}>
-                                    <img src={images.arrowTrend} alt="" />
-                                    Xá Xị Con Lâm Vỹ Dạ Nói Chuyện Cô Mấy Tuổi
-                                </li>
-                                <li className={cx('search-item')}>
-                                    <span className={cx('dot')}></span>
-                                    Con Gái Bác Trọng Tại Lễ Viếng
-                                </li>
-                                <li className={cx('search-item')}>
-                                    <span className={cx('dot')}></span>
-                                    Edit Kazuha Heiji
-                                </li>
-                                <li className={cx('search-item')}>
-                                    <span className={cx('dot')}></span>
-                                    lego mixue mua ở đâu
-                                </li>
-                                <li className={cx('search-item')}>
-                                    <span className={cx('dot')}></span>
-                                    Ai Là Đom Đóm Giơ Tay Lên CapCut
-                                </li>
-                                <li className={cx('search-item')}>
-                                    <span className={cx('dot')}></span>
-                                    Chuẩn Bị Phần Thi National Costume MGVN 2024
-                                </li>
-                                <li className={cx('search-item')}>
-                                    <span className={cx('dot')}></span>
-                                    Mashup Mời Trầu Và Ái Nộ
-                                </li>
-                            </ul> */}
-                            <h4 className={cx('search-title')}>Account</h4>
-                            {searchResult.map((result) => (
-                                <AccountItem key={result.id} data={result} />
-                            ))}
-                            <span className={cx('search-more')}>Thêm tất cả kết quả tìm kiếm cho "{searchValue}"</span>
+                            <div className={cx('search-result-content')}>
+                                <h4 className={cx('search-title')}>Bạn có thể thích</h4>
+                                <ul className={cx('search-list')}>
+                                    <li className={cx('search-item')}>
+                                        <img src={images.arrowTop} alt="" />
+                                        Gia Huy
+                                    </li>
+                                    <li className={cx('search-item')}>
+                                        <img src={images.arrowTrend} alt="" />
+                                        Trend Vừa Hận Vừa Yêu Remix
+                                    </li>
+                                    <li className={cx('search-item')}>
+                                        <img src={images.arrowTrend} alt="" />
+                                        Vụ Phốt Obito
+                                    </li>
+                                    <li className={cx('search-item')}>
+                                        <img src={images.arrowTrend} alt="" />
+                                        Xá Xị Con Lâm Vỹ Dạ Nói Chuyện Cô Mấy Tuổi
+                                    </li>
+                                    <li className={cx('search-item')}>
+                                        <span className={cx('dot')}></span>
+                                        Con Gái Bác Trọng Tại Lễ Viếng
+                                    </li>
+                                    <li className={cx('search-item')}>
+                                        <span className={cx('dot')}></span>
+                                        Edit Kazuha Heiji
+                                    </li>
+                                    {/* <li className={cx('search-item')}>
+                                        <span className={cx('dot')}></span>
+                                        lego mixue mua ở đâu
+                                    </li>
+                                    <li className={cx('search-item')}>
+                                        <span className={cx('dot')}></span>
+                                        Ai Là Đom Đóm Giơ Tay Lên CapCut
+                                    </li>
+                                    <li className={cx('search-item')}>
+                                        <span className={cx('dot')}></span>
+                                        Chuẩn Bị Phần Thi National Costume MGVN 2024
+                                    </li>
+                                    <li className={cx('search-item')}>
+                                        <span className={cx('dot')}></span>
+                                        Mashup Mời Trầu Và Ái Nộ
+                                    </li> */}
+                                </ul>
+                                <h4 className={cx('search-title')}>Account</h4>
+                                {searchResult.map((result) => (
+                                    <AccountItem key={result.id} data={result} />
+                                ))}
+                                <span className={cx('search-more')}>Thêm tất cả kết quả tìm kiếm cho "{searchValue}"</span>
+                            </div>
                         </PopperWrapper>
                     </div>
                 )}

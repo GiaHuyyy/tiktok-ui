@@ -1,10 +1,11 @@
+import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
+
 import Header from '~/layouts/components/Header';
 import Sidebar from './Sidebar';
 
 import classNames from 'classnames/bind';
 import styles from './Defaultlayout.module.scss';
-
-import { useEffect, useState } from 'react';
 
 const cx = classNames.bind(styles);
 function Defaultlayout({ children }) {
@@ -27,4 +28,7 @@ function Defaultlayout({ children }) {
     );
 }
 
+Defaultlayout.propTypes = {
+    children: PropTypes.node.isRequired,
+};
 export default Defaultlayout;

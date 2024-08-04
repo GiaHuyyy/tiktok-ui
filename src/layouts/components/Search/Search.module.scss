@@ -66,6 +66,10 @@
 
     &-result {
         width: 500px;
+
+        &-content {
+            overflow-y: overlay;
+        }
     }
 
     &-title {
