@@ -1,4 +1,4 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisVertical, faLightbulb, faVideo } from '@fortawesome/free-solid-svg-icons';
@@ -8,7 +8,7 @@ import 'tippy.js/dist/tippy.css';
 
 import { Link } from 'react-router-dom';
 
-import routesConfig from '~/config/routes';
+import config from '~/config';
 import Button from '~/components/Button';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
@@ -28,7 +28,7 @@ import {
     SettingsIcon,
 } from '~/components/Icons';
 import Image from '~/components/Image';
-import Search from '~/components/Layout/Search';
+import Search from '~/layouts/components/Search';
 
 const cx = classNames.bind(styles);
 
@@ -319,12 +319,12 @@ function Header({ setTheme, currentTheme }) {
     ];
 
     // Menu change (use i18next)
-    const [language, setLanguage] = useState('en');
+    // const [language, setLanguage] = useState('en');
     const handleMenuChange = (menuItem) => {
         switch (menuItem.type) {
             case 'language':
                 // Handle change language
-                setLanguage(menuItem.code);
+                // setLanguage(menuItem.code);
                 break;
             default:
                 break;
@@ -335,7 +335,7 @@ function Header({ setTheme, currentTheme }) {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 {/* Logo */}
-                <Link to={routesConfig.home} className={cx('logo')}>
+                <Link to={config.routes.home} className={cx('logo')}>
                     <img src={changeLogo} alt="TikTok" />
                 </Link>
 
@@ -345,7 +345,7 @@ function Header({ setTheme, currentTheme }) {
                 {/* Action */}
                 {currentUser ? (
                     <div className={cx('user')}>
-                        <Link to={routesConfig.upload}>
+                        <Link to={config.routes.upload}>
                             <Button text>
                                 <PlusIcon />
                                 Upload
