@@ -40,6 +40,10 @@
 
     // Sidebar
     --sidebar-bg: var(--light-mode);
+    
+    // SuggestedAccounts
+    --suggested-accounts-separate-bg: rgba(22, 24, 35, 0.12);
+    --suggested-accounts-title-color: rgba(22, 24, 35, 0.749);
 }
 
 [data-theme='dark'],
@@ -81,6 +85,10 @@ html.dark {
 
     // Sidebar
     --sidebar-bg: var(--dark-mode-bg);
+
+    // SuggestedAccounts
+    --suggested-accounts-separate-bg: rgba(255, 255, 255, 0.12);
+    --suggested-accounts-title-color: rgba(255, 255, 255, 0.5);
 }
 
 * {
