@@ -37,6 +37,9 @@
     --menu-item-hover-bg: rgba(22, 24, 35, 0.03);
     --menu-item-separate-color: rgba(22, 24, 35, 0.12);
     --menu-arrow-color: rgb(255, 255, 255);
+
+    // Sidebar
+    --sidebar-bg: var(--light-mode);
 }
 
 [data-theme='dark'],
@@ -75,6 +78,9 @@ html.dark {
     --menu-item-hover-bg: rgba(255, 255, 255, 0.03);
     --menu-item-separate-color: rgba(255, 255, 255, 0.12);
     --menu-arrow-color: rgba(39, 38, 38, 0.9);
+
+    // Sidebar
+    --sidebar-bg: var(--dark-mode-bg);
 }
 
 * {

@@ -1,6 +1,8 @@
 .wrapper {
     width: 240px;
-    // height: 100%;
+    padding-right: 8px;
+    height: 100%;
+    background: var(--sidebar-bg);
     overflow-y: auto;
     padding: 20px 0px 26px 8px;
 }
